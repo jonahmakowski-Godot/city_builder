@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResidentialBuilding" load_steps=3 format=3 uid="uid://bmr3gywox206a"]
+
+[ext_resource type="Script" uid="uid://cjl4jev1q6kh5" path="res://resources/definitions/residential_building.gd" id="1_kq4j8"]
+[ext_resource type="PackedScene" uid="uid://bdmq7rbxlvr8w" path="res://assets/buildings/residential/models/building-type-a.glb" id="1_lvupp"]
+
+[resource]
+script = ExtResource("1_kq4j8")
+population = 5
+model = ExtResource("1_lvupp")
+metadata/_custom_type_script = "uid://cjl4jev1q6kh5"
