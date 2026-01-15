@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0sq31t3myy6q"]
 
-[ext_resource type="Script" uid="uid://dlmt47ijirgbf" path="res://scripts/building_scene.gd" id="1_q13hq"]
+[ext_resource type="Script" uid="uid://dlmt47ijirgbf" path="res://scenes/building_scene.gd" id="1_q13hq"]
 [ext_resource type="Resource" uid="uid://bmr3gywox206a" path="res://resources/buildings/test_building.tres" id="2_0tix7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tix7"]

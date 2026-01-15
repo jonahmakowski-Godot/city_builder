@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm8k0nskflev7"]
 
-[ext_resource type="Script" uid="uid://dcjfsj3reyabi" path="res://scripts/camera.gd" id="1_cvpoc"]
+[ext_resource type="Script" uid="uid://dcjfsj3reyabi" path="res://scenes/camera.gd" id="1_cvpoc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lnu2h"]
 
