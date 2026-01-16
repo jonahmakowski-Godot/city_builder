@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://lxh3uipgyaa4"]
+
+[ext_resource type="Script" uid="uid://dtd414bn4g0hg" path="res://scenes/terrain/tile.gd" id="1_5dynj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dynj"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xt17j"]
+albedo_color = Color(0, 0.71449214, 0.20934674, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_scf7c"]
+lightmap_size_hint = Vector2i(14, 16)
+material = SubResource("StandardMaterial3D_xt17j")
+size = Vector3(1, 0.5, 1)
+
+[node name="Tile" type="StaticBody3D"]
+script = ExtResource("1_5dynj")
+height = 0.5
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_5dynj")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_scf7c")

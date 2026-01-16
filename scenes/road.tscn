@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://chseeoex5wbpr"]
+
+[ext_resource type="Script" uid="uid://wkks80bkqh5p" path="res://scenes/road.gd" id="1_mv8x7"]
+[ext_resource type="PackedScene" uid="uid://d1u7aim2alb6t" path="res://assets/roads/models/road-slant.glb" id="2_fy6l0"]
+[ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road_resource.gd" id="3_ekj83"]
+
+[sub_resource type="Resource" id="Resource_xeiim"]
+script = ExtResource("3_ekj83")
+mesh = ExtResource("2_fy6l0")
+metadata/_custom_type_script = "uid://cmyivev404pl5"
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_eahl8"]
+
+[node name="Road" type="Node3D"]
+script = ExtResource("1_mv8x7")
+res = SubResource("Resource_xeiim")
+
+[node name="NavRegion" type="NavigationRegion3D" parent="."]
+unique_name_in_owner = true
+navigation_mesh = SubResource("NavigationMesh_eahl8")

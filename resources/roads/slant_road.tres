@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RoadResource" load_steps=4 format=3 uid="uid://bxiolunwlt3vj"]
+
+[ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road_resource.gd" id="1_58llt"]
+[ext_resource type="PackedScene" uid="uid://d1u7aim2alb6t" path="res://assets/roads/models/road-slant.glb" id="1_vtyym"]
+[ext_resource type="Texture2D" uid="uid://fkuoba10sj3i" path="res://assets/roads/thumbnails/road-slant.png" id="3_b2643"]
+
+[resource]
+script = ExtResource("1_58llt")
+mesh = ExtResource("1_vtyym")
+thumbnail = ExtResource("3_b2643")
+metadata/_custom_type_script = "uid://cmyivev404pl5"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RoadResource" load_steps=4 format=3 uid="uid://oogrul7n6l8l"]
+
+[ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road_resource.gd" id="1_2bmbd"]
+[ext_resource type="PackedScene" uid="uid://c0byd5pn6guns" path="res://assets/roads/models/road-straight.glb" id="1_4mkav"]
+[ext_resource type="Texture2D" uid="uid://dxiwvgyfn5wq6" path="res://assets/roads/thumbnails/road-straight.png" id="3_4nvxr"]
+
+[resource]
+script = ExtResource("1_2bmbd")
+mesh = ExtResource("1_4mkav")
+thumbnail = ExtResource("3_4nvxr")
+metadata/_custom_type_script = "uid://cmyivev404pl5"
