@@ -1,8 +1,8 @@
 @tool
-class_name Road
+class_name RoadScene
 extends Node3D
 
-@export var res: RoadResource:
+@export var res: Road:
 	set(new_val):
 		if res != null:
 			res.changed.disconnect(_on_res_changed)
@@ -17,14 +17,8 @@ var mesh_node: Node3D = null
 @onready var nav_region: NavigationRegion3D = %NavRegion
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_on_res_changed()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_res_changed():

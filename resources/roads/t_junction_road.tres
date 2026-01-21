@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlaceableObject" load_steps=4 format=3 uid="uid://b5cy2vupi14xp"]
+
+[ext_resource type="PackedScene" uid="uid://bessk6kh14o7o" path="res://assets/roads/models/road-intersection-path.glb" id="1_3h4b4"]
+[ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road.gd" id="1_j4syo"]
+[ext_resource type="Texture2D" uid="uid://bn35ord4u3ppf" path="res://assets/roads/thumbnails/road-intersection-path.png" id="3_4lwj3"]
+
+[resource]
+script = ExtResource("1_j4syo")
+name = "T Junction"
+thumbnail = ExtResource("3_4lwj3")
+mesh = ExtResource("1_3h4b4")
+metadata/_custom_type_script = "uid://cmyivev404pl5"

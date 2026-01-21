@@ -1,6 +1,6 @@
 extends Control
 
-@export var roads: Array[RoadResource]
+@export var roads: Array[Road]
 
 # Main Menu Buttons
 @onready var road: TextureButton = %Road
@@ -22,9 +22,16 @@ func _ready():
 
 func load_roads():
 	for r in roads:
-		var button = TextureButton.new()
+		var button := TextureButton.new()
+		button.pressed.connect(set_current_building.bind(r))
 		button.texture_normal = r.thumbnail
+		button.tooltip_text = r.name
 		roads_menu.add_child(button)
+
+
+func set_current_building(building: Structure):
+	print("clicked on, ", building.name)
+	Globals.currently_placing = building
 
 
 func _toggle_road_menu():

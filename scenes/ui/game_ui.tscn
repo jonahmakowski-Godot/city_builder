@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cddbwibfvsxap"]
+[gd_scene load_steps=12 format=3 uid="uid://cddbwibfvsxap"]
 
 [ext_resource type="Script" uid="uid://crm6h03s6ahhs" path="res://scenes/ui/game_ui.gd" id="1_ru5ln"]
 [ext_resource type="Texture2D" uid="uid://dxiwvgyfn5wq6" path="res://assets/roads/thumbnails/road-straight.png" id="1_xjfbv"]
 [ext_resource type="Texture2D" uid="uid://cjji5ciallm3y" path="res://assets/buildings/residential/thumbnails/building-type-a.png" id="2_bma8u"]
-[ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road_resource.gd" id="2_qrkc0"]
+[ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road.gd" id="2_qrkc0"]
 [ext_resource type="Texture2D" uid="uid://bfakqnuvuu4rv" path="res://assets/buildings/commercial/thumbnails/building-a.png" id="3_fct72"]
 [ext_resource type="Resource" uid="uid://oogrul7n6l8l" path="res://resources/roads/straight_road.tres" id="3_yvtb5"]
 [ext_resource type="Texture2D" uid="uid://fdb3lyydq81w" path="res://assets/buildings/industrial/thumbnails/building-b.png" id="4_ru5ln"]
 [ext_resource type="Resource" uid="uid://bxiolunwlt3vj" path="res://resources/roads/slant_road.tres" id="4_yvtb5"]
+[ext_resource type="Resource" uid="uid://c46hmxmoyxdhr" path="res://resources/roads/slant_high_road.tres" id="5_k7elv"]
+[ext_resource type="Resource" uid="uid://b5cy2vupi14xp" path="res://resources/roads/t_junction_road.tres" id="6_fftnl"]
+[ext_resource type="Resource" uid="uid://8mqlfg71ig5i" path="res://resources/roads/right_bend_road.tres" id="7_bxde6"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -16,8 +19,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ru5ln")
-roads = Array[ExtResource("2_qrkc0")]([ExtResource("3_yvtb5"), ExtResource("4_yvtb5")])
+roads = Array[ExtResource("2_qrkc0")]([ExtResource("3_yvtb5"), ExtResource("4_yvtb5"), ExtResource("5_k7elv"), ExtResource("6_fftnl"), ExtResource("7_bxde6")])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -45,6 +49,8 @@ layout_mode = 2
 [node name="RoadsMenu" type="HBoxContainer" parent="VBoxContainer/Submenus/RoadHider/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 3)
@@ -87,21 +93,25 @@ size_flags_horizontal = 3
 [node name="Road" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Road"
 texture_normal = ExtResource("1_xjfbv")
 
 [node name="Residential" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Residential"
 texture_normal = ExtResource("2_bma8u")
 
 [node name="Commercial" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Commercial"
 texture_normal = ExtResource("3_fct72")
 
 [node name="Industrial" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Industrial"
 texture_normal = ExtResource("4_ru5ln")
 
 [node name="Spacer2" type="Control" parent="VBoxContainer/Main/HBoxContainer"]
