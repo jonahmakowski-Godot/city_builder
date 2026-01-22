@@ -14,7 +14,7 @@ extends Node3D
 
 var mesh_node: Node3D = null
 
-@onready var nav_region: NavigationRegion3D = %NavRegion
+@onready var paths: Node3D = %Paths
 
 
 func _ready() -> void:
@@ -30,16 +30,10 @@ func _on_res_changed():
 		Globals.apply_material(mesh_node, preload("uid://cwrsujo7dfi43"), true)
 	add_child(mesh_node)
 
-	"""
-	var nav_instance := MeshInstance3D.new()
-	var mesh := PlaneMesh.new()
-	var aabb = Globals.get_aabb(mesh_node)
+	# Nav system
+	for child in paths.get_children():
+		child.queue_free()
 
-	nav_instance.mesh = mesh
-	nav_instance.position = mesh_node.position + Vector3(0, aabb.size.y / 2, 0)
-	nav_instance.hide()
-	add_child(nav_instance)
-
-	await get_tree().process_frame
-	nav_region.bake_navigation_mesh()
-	"""
+	for path in res.path_points:
+		var new_path_node = Path3D.new()
+		new_path_node.curve = res.path_points

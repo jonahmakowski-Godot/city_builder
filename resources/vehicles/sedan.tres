@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Car" load_steps=3 format=3 uid="uid://c38qiugl7o112"]
+
+[ext_resource type="PackedScene" uid="uid://dsyia70k0bkva" path="res://assets/cars/models/sedan.glb" id="1_ef5b5"]
+[ext_resource type="Script" uid="uid://cdaorl110hl13" path="res://resources/definitions/car.gd" id="1_gy1jx"]
+
+[resource]
+script = ExtResource("1_gy1jx")
+name = "Sedan"
+speed = 100
+model = ExtResource("1_ef5b5")
+metadata/_custom_type_script = "uid://cdaorl110hl13"

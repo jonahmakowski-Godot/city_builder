@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0sq31t3myy6q"]
 
-[ext_resource type="Script" uid="uid://dlmt47ijirgbf" path="res://scenes/building_scene.gd" id="1_q13hq"]
+[ext_resource type="Script" uid="uid://dlmt47ijirgbf" path="res://scenes/building.gd" id="1_n8bkc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q13hq"]
 
 [node name="BuildingScene" type="StaticBody3D"]
-script = ExtResource("1_q13hq")
+script = ExtResource("1_n8bkc")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true

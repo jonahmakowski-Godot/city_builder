@@ -7,6 +7,11 @@ extends Structure
 		if thumbnail != val:
 			thumbnail = val
 			emit_changed()
+@export var path_points: Array[Curve3D]:
+	set(val):
+		if path_points != val:
+			path_points = val
+			emit_changed()
 
 
 func compile_mesh() -> Node3D:
