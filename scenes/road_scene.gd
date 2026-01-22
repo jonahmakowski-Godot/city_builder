@@ -9,7 +9,7 @@ extends Node3D
 		res = new_val
 		if res != null:
 			res.changed.connect(_on_res_changed)
-			if is_node_ready():
+			if is_node_ready() and is_inside_tree():
 				_on_res_changed()
 
 var mesh_node: Node3D = null
@@ -26,9 +26,11 @@ func _on_res_changed():
 	if mesh_node != null:
 		mesh_node.queue_free()
 	mesh_node = res.mesh.instantiate()
+	if res.preview_mode:
+		Globals.apply_material(mesh_node, preload("uid://cwrsujo7dfi43"), true)
 	add_child(mesh_node)
 
-	# Nav System
+	"""
 	var nav_instance := MeshInstance3D.new()
 	var mesh := PlaneMesh.new()
 	var aabb = Globals.get_aabb(mesh_node)
@@ -40,3 +42,4 @@ func _on_res_changed():
 
 	await get_tree().process_frame
 	nav_region.bake_navigation_mesh()
+	"""

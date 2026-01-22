@@ -16,7 +16,6 @@ size = Vector3(1, 0.5, 1)
 [node name="Tile" type="StaticBody3D"]
 script = ExtResource("1_5dynj")
 height = 0.5
-structure_rotation = null
 
 [node name="TileCollisionShape" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true
@@ -32,4 +31,10 @@ mesh = SubResource("BoxMesh_scf7c")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
+[node name="HoloStructureLocation" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -11,7 +11,5 @@ extends Structure
 
 func compile_mesh() -> Node3D:
 	var to_return = load("uid://chseeoex5wbpr").instantiate()
-	to_return.res = self.duplicate(true)
-	if preview_mode:
-		Globals.apply_material(to_return, preload("uid://cwrsujo7dfi43"))
+	to_return.res = self
 	return to_return

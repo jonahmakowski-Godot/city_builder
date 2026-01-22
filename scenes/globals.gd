@@ -7,12 +7,13 @@ var currently_placing_angle: int
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("rotate_object_right"):
-		currently_placing_angle += 90
-		get_viewport().set_input_as_handled()
-	if event.is_action_pressed("rotate_object_left"):
-		currently_placing_angle -= 90
-		get_viewport().set_input_as_handled()
+	if not Engine.is_editor_hint():
+		if event.is_action_pressed("rotate_object_right"):
+			currently_placing_angle += 90
+			get_viewport().set_input_as_handled()
+		if event.is_action_pressed("rotate_object_left"):
+			currently_placing_angle -= 90
+			get_viewport().set_input_as_handled()
 
 
 func get_aabb(node: Node3D) -> AABB:
@@ -33,12 +34,13 @@ func get_aabb(node: Node3D) -> AABB:
 	return aabb
 
 
-func apply_material(node: Node3D, material: StandardMaterial3D):
-	if node is MeshInstance3D:
-		node.material_override = material
-
-	for child in node.get_children():
-		if child is MeshInstance3D:
-			child.material_override = material
+func apply_material(node: Node, material: StandardMaterial3D, overlay := false):
+	if node is MeshInstance3D and node.mesh:
+		if !overlay:
+			node.material_override = material
 		else:
-			apply_material(child, material)
+			node.material_overlay = material
+		return
+
+	for child in node.get_children(true):
+		apply_material(child, material, overlay)

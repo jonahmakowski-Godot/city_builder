@@ -24,9 +24,6 @@ static func create() -> BuildingScene:
 
 
 func _ready() -> void:
-	if not is_inside_tree():
-		print("  Parent: ", get_parent().name if get_parent() else "None")
-		print("  Root: ", get_tree().root.name if get_tree().root else "None")
 	update_model()
 
 
