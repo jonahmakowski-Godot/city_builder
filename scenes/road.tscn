@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://chseeoex5wbpr"]
+[gd_scene format=3 uid="uid://chseeoex5wbpr"]
 
 [ext_resource type="Script" uid="uid://wkks80bkqh5p" path="res://scenes/road.gd" id="1_my2y2"]
 [ext_resource type="Resource" uid="uid://oogrul7n6l8l" path="res://resources/roads/straight_road.tres" id="2_fy6l0"]
 
-[node name="Road" type="Node3D"]
+[node name="Road" type="Node3D" unique_id=1301619095]
 script = ExtResource("1_my2y2")
 res = ExtResource("2_fy6l0")
 
-[node name="Paths" type="Node3D" parent="."]
+[node name="Paths" type="Node3D" parent="." unique_id=1193928798]
 unique_name_in_owner = true

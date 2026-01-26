@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://lxh3uipgyaa4"]
+[gd_scene format=3 uid="uid://lxh3uipgyaa4"]
 
 [ext_resource type="Script" uid="uid://dtd414bn4g0hg" path="res://scenes/terrain/tile.gd" id="1_5dynj"]
 
@@ -13,25 +13,25 @@ lightmap_size_hint = Vector2i(14, 16)
 material = SubResource("StandardMaterial3D_5dynj")
 size = Vector3(1, 0.5, 1)
 
-[node name="Tile" type="StaticBody3D"]
+[node name="Tile" type="StaticBody3D" unique_id=244486180]
 script = ExtResource("1_5dynj")
 height = 0.5
 
-[node name="TileCollisionShape" type="CollisionShape3D" parent="."]
+[node name="TileCollisionShape" type="CollisionShape3D" parent="." unique_id=1423845472]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_5dynj")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1062088203]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 mesh = SubResource("BoxMesh_scf7c")
 
-[node name="StructureLocation" type="Node3D" parent="."]
+[node name="StructureLocation" type="Node3D" parent="." unique_id=1458117297]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="HoloStructureLocation" type="Node3D" parent="."]
+[node name="HoloStructureLocation" type="Node3D" parent="." unique_id=2130545987]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 

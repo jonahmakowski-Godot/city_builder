@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Road" load_steps=6 format=3 uid="uid://oogrul7n6l8l"]
+[gd_resource type="Resource" script_class="Road" format=3 uid="uid://oogrul7n6l8l"]
 
 [ext_resource type="Script" uid="uid://cmyivev404pl5" path="res://resources/definitions/road.gd" id="1_2bmbd"]
 [ext_resource type="PackedScene" uid="uid://c0byd5pn6guns" path="res://assets/roads/models/road-straight.glb" id="1_4mkav"]

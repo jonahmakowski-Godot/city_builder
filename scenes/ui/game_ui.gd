@@ -30,7 +30,6 @@ func load_roads():
 
 
 func set_current_building(building: Structure):
-	print("clicked on, ", building.name)
 	Globals.currently_placing = building
 
 

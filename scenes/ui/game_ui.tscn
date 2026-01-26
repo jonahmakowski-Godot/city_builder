@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cddbwibfvsxap"]
+[gd_scene format=3 uid="uid://cddbwibfvsxap"]
 
 [ext_resource type="Script" uid="uid://crm6h03s6ahhs" path="res://scenes/ui/game_ui.gd" id="1_ru5ln"]
 [ext_resource type="Texture2D" uid="uid://dxiwvgyfn5wq6" path="res://assets/roads/thumbnails/road-straight.png" id="1_xjfbv"]
@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://b5cy2vupi14xp" path="res://resources/roads/t_junction_road.tres" id="6_fftnl"]
 [ext_resource type="Resource" uid="uid://8mqlfg71ig5i" path="res://resources/roads/right_bend_road.tres" id="7_bxde6"]
 
-[node name="GameUI" type="Control"]
+[node name="GameUI" type="Control" unique_id=1676167351]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ mouse_filter = 1
 script = ExtResource("1_ru5ln")
 roads = Array[ExtResource("2_qrkc0")]([ExtResource("3_yvtb5"), ExtResource("4_yvtb5"), ExtResource("5_k7elv"), ExtResource("6_fftnl"), ExtResource("7_bxde6")])
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1696753175]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -33,87 +33,87 @@ offset_top = -70.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Submenus" type="HFlowContainer" parent="VBoxContainer"]
+[node name="Submenus" type="HFlowContainer" parent="VBoxContainer" unique_id=1310407237]
 layout_mode = 2
 
-[node name="RoadHider" type="PanelContainer" parent="VBoxContainer/Submenus"]
+[node name="RoadHider" type="PanelContainer" parent="VBoxContainer/Submenus" unique_id=921290505]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Submenus/RoadHider"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Submenus/RoadHider" unique_id=1819885389]
 layout_mode = 2
 
-[node name="RoadsMenu" type="HBoxContainer" parent="VBoxContainer/Submenus/RoadHider/ScrollContainer"]
+[node name="RoadsMenu" type="HBoxContainer" parent="VBoxContainer/Submenus/RoadHider/ScrollContainer" unique_id=155774369]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=105670487]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 
-[node name="Main" type="PanelContainer" parent="VBoxContainer"]
+[node name="Main" type="PanelContainer" parent="VBoxContainer" unique_id=1441550055]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Main" unique_id=191877532]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Main/HBoxContainer" unique_id=893723110]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main/HBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main/HBoxContainer/PanelContainer" unique_id=1062635542]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/HBoxContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/HBoxContainer/PanelContainer/MarginContainer" unique_id=1402441904]
 layout_mode = 2
 alignment = 1
 
-[node name="Money" type="Label" parent="VBoxContainer/Main/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Money" type="Label" parent="VBoxContainer/Main/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1013350137]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Money: $10000"
 
-[node name="Population" type="Label" parent="VBoxContainer/Main/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Population" type="Label" parent="VBoxContainer/Main/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=793814554]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Population: 1000"
 
-[node name="Spacer1" type="Control" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="Spacer1" type="Control" parent="VBoxContainer/Main/HBoxContainer" unique_id=1751981651]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Road" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="Road" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer" unique_id=1711791141]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Road"
 texture_normal = ExtResource("1_xjfbv")
 
-[node name="Residential" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="Residential" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer" unique_id=1837328480]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Residential"
 texture_normal = ExtResource("2_bma8u")
 
-[node name="Commercial" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="Commercial" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer" unique_id=2032794157]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Commercial"
 texture_normal = ExtResource("3_fct72")
 
-[node name="Industrial" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="Industrial" type="TextureButton" parent="VBoxContainer/Main/HBoxContainer" unique_id=1846150145]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Industrial"
 texture_normal = ExtResource("4_ru5ln")
 
-[node name="Spacer2" type="Control" parent="VBoxContainer/Main/HBoxContainer"]
+[node name="Spacer2" type="Control" parent="VBoxContainer/Main/HBoxContainer" unique_id=1280345494]
 layout_mode = 2
 size_flags_horizontal = 3

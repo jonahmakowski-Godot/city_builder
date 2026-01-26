@@ -36,4 +36,4 @@ func _on_res_changed():
 
 	for path in res.path_points:
 		var new_path_node = Path3D.new()
-		new_path_node.curve = res.path_points
+		new_path_node.curve = path
