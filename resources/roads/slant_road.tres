@@ -9,4 +9,6 @@ script = ExtResource("1_58llt")
 thumbnail = ExtResource("3_b2643")
 mesh = ExtResource("1_vtyym")
 name = "Slant"
+construction_cost = null
+maintenance_cost = null
 metadata/_custom_type_script = "uid://cmyivev404pl5"

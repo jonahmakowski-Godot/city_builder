@@ -12,8 +12,9 @@ extends StaticBody3D
 		cur_structure = val
 		if is_node_ready():
 			_update_structure()
-@export var structure_rotation: int
 @export var holo_structure: Structure
+
+var tile_pos: Vector2i
 
 @onready var collision_shape: CollisionShape3D = %TileCollisionShape
 @onready var mesh: MeshInstance3D = %Mesh
@@ -31,7 +32,7 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	if holo_structure != null:
-		holo_structure_location.get_child(0).rotation_degrees.y = Globals.currently_placing_angle
+		holo_structure_location.get_child(0).rotation_degrees.y = Globals.currently_placing.rotation
 
 		if holo_structure.name != Globals.currently_placing.name:
 			_update_holo_structure(true)
@@ -54,8 +55,9 @@ func _update_structure():
 
 	if cur_structure != null:
 		var new_node := cur_structure.compile_mesh()
-		new_node.rotation_degrees.y = structure_rotation
+		new_node.rotation_degrees.y = cur_structure.rotation
 		structure_location.add_child(new_node)
+		Globals.current_game_res.buildings[tile_pos] = cur_structure
 
 
 func _update_holo_structure(update := false):
@@ -68,7 +70,7 @@ func _update_holo_structure(update := false):
 
 	if holo_structure != null:
 		var new_node := holo_structure.compile_mesh()
-		new_node.rotation_degrees.y = Globals.currently_placing_angle
+		new_node.rotation_degrees.y = Globals.currently_placing.rotation
 		holo_structure_location.add_child(new_node)
 		if cur_structure != null:
 			structure_location.get_child(0).visible = false
@@ -78,9 +80,10 @@ func _update_holo_structure(update := false):
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and Globals.currently_placing != null:
-		structure_rotation = Globals.currently_placing_angle
-		cur_structure = Globals.currently_placing.duplicate(true)
-		get_viewport().set_input_as_handled()
+		if event.is_pressed():
+			cur_structure = Globals.currently_placing.duplicate(true)
+			Globals.current_game_res.money -= cur_structure.construction_cost
+			get_viewport().set_input_as_handled()
 
 
 func _on_mouse_entered() -> void:

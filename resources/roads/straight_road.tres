@@ -24,4 +24,5 @@ thumbnail = ExtResource("3_4nvxr")
 path_points = Array[Curve3D]([SubResource("Curve3D_4nvxr"), SubResource("Curve3D_kddqf")])
 mesh = ExtResource("1_4mkav")
 name = "Straight"
+construction_cost = 10
 metadata/_custom_type_script = "uid://cmyivev404pl5"

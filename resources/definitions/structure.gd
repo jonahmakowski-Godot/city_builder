@@ -8,6 +8,10 @@ extends Resource
 			mesh = val
 			emit_changed()
 @export var name: String
+@export var construction_cost: int
+@export var maintenance_cost: int
+@export_category("No Editing!")
+@export var rotation: int
 
 var preview_mode: bool = false:
 	set(val):
