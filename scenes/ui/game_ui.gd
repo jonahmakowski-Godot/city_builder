@@ -18,6 +18,8 @@ extends Control
 func _ready():
 	road.pressed.connect(_toggle_road_menu)
 	load_roads()
+	_update_money()
+	_update_population()
 	Globals.current_game_res.money_changed.connect(_update_money)
 	Globals.current_game_res.population_changed.connect(_update_population)
 
@@ -40,7 +42,7 @@ func _update_money():
 
 
 func _update_population():
-	money.text = "Population: " + str(Globals.current_game_res.population)
+	population.text = "Population: " + str(Globals.current_game_res.population)
 
 
 func _toggle_road_menu():
